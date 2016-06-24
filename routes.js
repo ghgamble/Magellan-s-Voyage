@@ -45,11 +45,51 @@ var router = require('express').Router();
          })
          //res.send('<div><p>Phillipines</p></div>')
       })
+   router.route('/next')
+      .get(function(req,res){
+         console.log(req.query);
+         var nextLocation = "dummy";
+         switch(req.query.location) {
+            case "Seville": 
+               nextLocation = "Canary Islands"
+               break;
+            case "Canary Islands":
+               nextLocation = "Cape Verde"
+               break;
+            case "Cape Verde":
+               nextLocation = "Strait of Magellan"
+               break;
+            case "Strait of Magellan":
+               nextLocation = "Guam"
+               break;
+            case "Guam":
+               nextLocation = "Phillipines"
+               break;
+            case "Phillipines":
+               nextLocation = "Magellan died here..."
+               break;
+            default:
+               nextLocation = "default"
+               
+         }
+         res.json ({
+            location: req.query.location,
+            nextLocation: nextLocation
+         })
+      })
    router.route('/*')
       .get(function(req, res){
-         res.json ({
-            title: req.params[0],
-            text: "Magellan did not travel to " + req.params[0]
-         })
+         // nope
+         //res.json ({
+            //title: req.params[0],
+            //text: "Magellan did not travel to " + req.params[0]
+         //})
+         
+         //nope
+         var title = req.params[0];
+         var text = "Magellan did not travel to " + req.params[0]
+         //res.send('<div> <h1>title </h1> <p>text</p> </div>')
+         
+         res.send(text);
       })
 module.exports = router
