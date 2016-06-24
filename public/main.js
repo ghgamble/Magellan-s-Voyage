@@ -17,8 +17,14 @@ angular.module('MagellansVoyage', [])
       // of /Seville route (which we would need to add) as the starting point,
       //can't use
       magCtrl.CurrentStop = 0;
+      magCtrl.showNext = true;
+      
       magCtrl.title = "Seville";
       magCtrl.text = "Seville text...";
+      // $http.get('/Seville');
+      // $http.get('/start');
+      
+      
       magCtrl.nextStop = function() {
          magCtrl.CurrentStop++
          var path = magCtrl.Stops[magCtrl.CurrentStop];
@@ -33,6 +39,9 @@ angular.module('MagellansVoyage', [])
                //console.log("text: ", data.data.text);
                magCtrl.title = data.data.title;
                magCtrl.text = data.data.text;
+               if(magCtrl.title === "Phillipines") {
+                  magCtrl.showNext = false;
+               }
             })
             .catch(function(error){
                console.log("magCtrl.nextStop got error: ", error)

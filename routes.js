@@ -45,5 +45,11 @@ var router = require('express').Router();
          })
          //res.send('<div><p>Phillipines</p></div>')
       })
-
+   router.route('/*')
+      .get(function(req, res){
+         res.json ({
+            title: req.params[0],
+            text: "Magellan did not travel to " + req.params[0]
+         })
+      })
 module.exports = router

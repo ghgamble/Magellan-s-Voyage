@@ -27,7 +27,7 @@
         <div>
             <h1>{{magCtrl.title}}</h1> 
             <p>{{magCtrl.text}}</p>
-            <button ng-click="magCtrl.nextStop()">Next</button>
+            <button ng-show="magCtrl.showNext" ng-click="magCtrl.nextStop()">Next</button>
         </div>
 
     </body>
