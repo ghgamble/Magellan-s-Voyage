@@ -2,29 +2,48 @@ var router = require('express').Router();
 
 //Routes
    router.route('/')
+//      .get(function(req, res){
+//         console.log("Seville")
+//        res.send('<div><p>Seville</p><button ng-click="magCtrl.nextStop()">Next</button></div>')
+//      })
+   router.route('/CanaryIslands')
       .get(function(req, res){
-         console.log("Seville")
-         res.send('<div><p>Seville</p><button>Next</button></div>')
-      })
-   router.route('/CanaryIsland')
-      .get(function(req, res){
-         res.send('<div><p>Canary Island</p><button>Next</button></div>')
+         res.json( {
+            title:   "CanaryIslands",
+            text:    "CanaryIslands text"
+            })
       })
    router.route('/CapeVerde')
       .get(function(req, res){
-         res.send('<div><p>Cape Verde</p><button>Next</button></div>')
+         res.json( {
+            title:   "CapeVerde",
+            text:    "CapeVerde text blah blah"
+         })
+         //res.send('<div><p>Cape Verde</p><button ng-click="magCtrl.nextStop()">Next</button></div>')
       })
    router.route('/StraitOfMagellan')
       .get(function(req, res){
-         res.send('<div><p>Strait of Magellan</p><button>Next</button></div>')
+         res.json( {
+            title:   "StraitOfMagellan",
+            text:    "Strait of Magellan text.... cape of 11000 virgins?"
+         })
+         //res.send('<div><p>Strait of Magellan</p><button ng-click="magCtrl.nextStop()">Next</button></div>')
       })
    router.route('/Guam')
       .get(function(req, res){
-         res.send('<div><p>Guam</p><button>Next</button></div>')
+         res.json( {
+            title:   "Guam",
+            text:    "..... more Guam text"
+         })
+         //res.send('<div><p>Guam</p><button ng-click="magCtrl.nextStop()">Next</button></div>')
       })
    router.route('/Phillipines')
       .get(function(req, res){
-         res.send('<div><p>Phillipines</p></div>')
+         res.json( {
+            title:   "Phillipines",
+            text:    "end of the road for Magellan text, remove Next button"
+         })
+         //res.send('<div><p>Phillipines</p></div>')
       })
 
 module.exports = router

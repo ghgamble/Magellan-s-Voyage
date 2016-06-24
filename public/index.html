@@ -22,7 +22,13 @@
   <script type="text/javascript" src="main.js"></script>
 
    </head>
-   <body>
+   <body ng-controller="MagellansController as magCtrl">
 
-   </body>
+        <div>
+            <h1>{{magCtrl.title}}</h1> 
+            <p>{{magCtrl.text}}</p>
+            <button ng-click="magCtrl.nextStop()">Next</button>
+        </div>
+
+    </body>
 </html>
